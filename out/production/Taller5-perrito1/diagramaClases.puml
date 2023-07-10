@@ -1,0 +1,89 @@
+@startuml
+skinparam backgroundColor #EEEBDC
+skinparam handwritten true
+
+package "Entities" {
+
+class Libro {
+-String: isbm
+-String: titulo
+-String: autor
+-String: categoria
+-int: paginas
+-int: stock
+
++Libro(...)
++gets()
++sets()
+}
+class Usuario {
+-String: rut
+-String: nombre
+-String: apellido
+-String: contrasenia
+
++Usuario(...)
++gets()
++sets()
+}
+class Registro {
+-String: rut
+-String: nombre
+-String: apellido
+-String: isbn
+-String: titulo
+-String: transaccion
+
++Registro(...)
++gets()
++sets()
+}
+
+}
+package "Forms" {
+
+class agregarLibro {
+}
+class buscarLibro {
+}
+class devolverLibro {
+}
+class Forms {
+}
+class Menu {
+}
+class prestarlibro {
+}
+
+}
+package "Utils" {
+
+class UtilsLibros {
++List<Libro> libroList
+}
+class UtilsUsuario {
++List<Usuario> usuarioList
+}
+class UtilsLibrosPrestados {
++List<Registro> registroList
+}
+
+
+}
+
+class Main {
+}
+interface Sistema {
+comenzarPrograma(): void
+}
+class SistemaImpl {
++SistemaImpl()
+}
+
+UtilsLibros --> Libro
+UtilsUsuario --> Usuario
+UtilsLibrosPrestados --> Registro
+
+SistemaImpl --> Sistema
+
+@enduml
