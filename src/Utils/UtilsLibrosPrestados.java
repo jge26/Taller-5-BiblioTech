@@ -12,6 +12,7 @@ public class UtilsLibrosPrestados {
 
     public static void escribirLibrosPrestados(List<Registro> registroList, List<Usuario> usuarioList) {
 
+        //Escribe archivos en "registro.txt"
         try {
             BufferedWriter escribirLibroPrestado = new BufferedWriter(new FileWriter("registro.txt"));
 
@@ -27,6 +28,7 @@ public class UtilsLibrosPrestados {
 
     public static void leerArchivoLibrosPrestados(List<Registro> registroList) {
 
+        //Lee el archivos "registro.txt"
         try (BufferedReader leerRegistro = new BufferedReader(new FileReader("registro.txt"))) {
             String linea;
             while((linea = leerRegistro.readLine()) != null) {
